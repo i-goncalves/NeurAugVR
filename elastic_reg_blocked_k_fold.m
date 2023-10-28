@@ -49,6 +49,9 @@ function [M_subject_model] = elastic_reg_blocked_k_fold(BOLD_ses1, BOLD_ses2, EE
         % Get list of lambdas (regularization hyperparameter)
 
         lambda = get_lambdas(EEG_learn,BOLD_learn,alpha);
+
+        % (get_lambdas function:
+        % https://github.com/martaxavier/Mig_N2Treat/blob/main/get_lambdas.m)
         % or define broad list
         % lambda = logspace(-4,0,20);
 
