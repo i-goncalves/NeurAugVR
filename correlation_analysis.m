@@ -59,6 +59,8 @@ function [T_corr] = correlation_analysis(BOLD_ses1, BOLD_ses2, EEG_ses1, EEG_ses
                PSD_ch_freq = PSD_ch(f,:);
                PSD_ch_freq = zscore(convolve_features_fast(PSD_ch_freq',1/TR,delay,32))';
 
+               % https://github.com/martaxavier/Mig_N2Treat/blob/main/convolve_features_fast.m
+
                [rho,pval] = corr(BOLD_ses2_sub,PSD_ch_freq');
                M_corr(ch,f) = rho;
 
